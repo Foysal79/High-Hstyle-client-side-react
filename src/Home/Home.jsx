@@ -4,6 +4,7 @@ import OurBrands from "./OurBrands";
 import NewCollection from "./NewCollection";
 import BestSelling from "./BestSelling";
 import ExtraService from "./ExtraService";
+import Faqs from "./Faqs";
 
 
 
@@ -43,6 +44,11 @@ const Home = () => {
             <p className="text-lg text-gray-500 font-semibold" >Check out some of the stand outs from our collection</p>
               <BestSelling></BestSelling>
               </div>
+
+             <div>
+             <h1 className="text-center mt-4 mb-4 text-6xl font-bold" >FAQs</h1>
+              <Faqs></Faqs>
+             </div>
 
               
                
