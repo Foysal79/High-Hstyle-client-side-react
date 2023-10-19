@@ -1,20 +1,30 @@
+import { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
+import { AuthContext } from "../Provider/AuthProvider";
 
 
 const Navbar = () => {
 
+    const {user, LogOut} = useContext(AuthContext);
+
     const navLink = <>
        <li><NavLink className="mr-4" to='/' >Home</NavLink></li>
-       <li><NavLink className="mr-4" to='/Shop' >Shop</NavLink></li>
-       <li><NavLink className="mr-4" to='/addProduct' >Add Product</NavLink></li>
-       <li><NavLink className="mr-4" to='/myCart' >My Cart</NavLink></li>
+       <li><NavLink className="mr-4" to='/shop' >Shop</NavLink></li>
+       {
+        user && <li><NavLink className="mr-4" to='/addProduct' >Add Product</NavLink></li>
+        
+       }
+       
        <li><NavLink className="mr-4" to='/blog' >Blog </NavLink></li>
        <li><NavLink className="mr-4" to='/contact' >Contact</NavLink></li>
+       {
+        user && <li><NavLink className="mr-4" to='/cart' >My Cart</NavLink></li>
+       }
        
 
     </>
     return (
-        <div className="navbar bg-base-100">
+        <div className="navbar bg-base-100 px-6 py-3 ">
   <div className="navbar-start">
     <div className="dropdown">
       <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -36,7 +46,12 @@ const Navbar = () => {
     </ul>
   </div>
   <div className="navbar-end">
-    <Link><a className="btn">Login</a></Link>
+    {
+        user ? <div className="flex gap-4 items-center">
+        <p>{user?.displayName}</p> <img className="rounded-full w-10" src={user?.photoURL} alt="img" />
+        <button onClick={() => LogOut()} className="btn bg-blue-600 hover:bg-blue-700 text-white" >LogOut</button>
+      </div> : <Link to='/login' ><a className="btn bg-blue-600 hover:bg-blue-700 text-white">Login</a></Link>
+    }
   </div>
 </div>
     );
