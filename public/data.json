@@ -1,0 +1,47 @@
+[
+    {
+      "id": 1,
+      "name": "Nike",
+      "img": "https://i.ibb.co/zfYWS3F/web-183282388.jpg"
+    },
+    {
+      "id": 2,
+      "name": "Levis",
+      "img": "https://i.ibb.co/zhPXGg4/fb70a88609b27c0259c2328be2b51f74.jpg"
+    },
+    {
+      "id": 3,
+      "name": "Burberry",
+      "img": "https://i.ibb.co/gM0xzj2/476-burberry.jpg"
+    },
+    {
+      "id": 4,
+      "name": "Puma",
+      "img": "https://i.ibb.co/YhxLjp1/1376635.png"
+    },
+    {
+      "id": 5,
+      "name": "Adidas",
+      "img": "https://i.ibb.co/DKQmdd6/Adidas-logo.jpg"
+    },
+    {
+      "id": 6,
+      "name": "Celvien-Klein",
+      "img": "https://i.ibb.co/tJdsvvW/calvin-klein-brand-clothes-logo-symbol-design-fashion-illustration-with-black-background-free-vector.jpg"
+    },
+    {
+      "id": 7,
+      "name": "Tommy-Hilfiger",
+      "img": "https://i.ibb.co/rx9Sv2W/Tommy-Hilfiger-logo.png"
+    },
+    {
+      "id": 8,
+      "name": "Gap",
+      "img": "https://i.ibb.co/ykMyZbV/gap-logo-symbol-brand-white-design-clothes-fashion-illustration-with-black-background-free-vector.jpg"
+    },
+    {
+      "id": 9,
+      "name": "Rolex",
+      "img": "https://i.ibb.co/QpCFyrN/rolex-min.jpg"
+    }
+  ]
