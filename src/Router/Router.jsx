@@ -3,6 +3,7 @@ import Error from "../Components/Error";
 import Root from "../Components/Root";
 import Home from "../Home/Home";
 import Cards from "../Home/cards";
+import AddProduct from "../BackEnd/AddProduct";
 
 const router = createBrowserRouter([
     {
@@ -14,6 +15,10 @@ const router = createBrowserRouter([
             path: '/',
             element: <Home></Home>,
             loader: () => fetch('/data.json')
+        },
+        {
+            path: '/addProduct',
+            element: <AddProduct></AddProduct>
         }
       ]
     },

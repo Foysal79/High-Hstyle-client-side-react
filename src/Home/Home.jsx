@@ -9,6 +9,7 @@ import BestSelling from "./BestSelling";
 
 
 
+
 const Home = () => {
     
     const cards = useLoaderData();
@@ -34,10 +35,8 @@ const Home = () => {
             <p className="text-lg text-gray-500 font-semibold" >Check out some of the stand outs from our collection</p>
               <BestSelling></BestSelling>
               </div>
-
-              <div>
-                
-              </div>
+               
+              
 
 
 
