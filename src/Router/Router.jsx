@@ -9,6 +9,7 @@ import Login from "../LoginLogOut/Login";
 import PrivetRouter from "./PrivetRouter";
 import Cart from "../PrivetRouter/Cart";
 import Shop from "../Home/Shop";
+import Items from "../Home/Items";
 
 const router = createBrowserRouter([
     {
@@ -41,6 +42,11 @@ const router = createBrowserRouter([
         {
             path: '/shop',
             element: <Shop></Shop>
+        },
+        {
+            path: '/items/:name',
+            element: <Items></Items>,
+            loader: ({params}) => fetch(`http://localhost:5000/items/${params.name}`),
         }
       ]
     },

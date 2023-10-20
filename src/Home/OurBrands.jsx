@@ -1,6 +1,9 @@
+import { Link } from "react-router-dom";
+
 const OurBrands = ({brand}) => {
     const {id, name, img} = brand;
   return (
+    <Link to={`/items/${name}`} >
     <div className="card card-compact  bg-base-100 shadow-xl">
       <figure>
         <img className="w-full h-64"
@@ -13,6 +16,7 @@ const OurBrands = ({brand}) => {
         
       </div>
     </div>
+    </Link>
   );
 };
 
