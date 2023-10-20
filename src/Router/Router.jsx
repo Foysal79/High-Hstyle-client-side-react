@@ -11,6 +11,7 @@ import Cart from "../PrivetRouter/Cart";
 import Shop from "../Home/Shop";
 import Items from "../Home/Items";
 import SingleItem from "../Home/SingelItem";
+import UpdateItems from "../Home/UpdateItems";
 
 const router = createBrowserRouter([
     {
@@ -54,6 +55,11 @@ const router = createBrowserRouter([
             element: <PrivetRouter><SingleItem></SingleItem></PrivetRouter>,
             loader: ({params}) => fetch(`http://localhost:5000/item/${params.id}`)
             
+        },
+        {
+            path: '/update/:id',
+            element : <PrivetRouter> <UpdateItems></UpdateItems> </PrivetRouter>,
+            loader: ({params}) => fetch(`http://localhost:5000/update/${params.id}`)
         }
       ]
     },

@@ -1,48 +1,47 @@
-import toast from "react-hot-toast";
+import React from 'react';
+import toast from 'react-hot-toast';
+import { useLoaderData } from 'react-router-dom';
 
-
-const AddProduct = () => {
-        
-  const handelAdd = e => {
-    e.preventDefault();
-    const form = e.target;
-    const name = form.name.value;
-    const image = form.image.value;
-    const brandName = form.brandName.value;
-    const type = form.type.value ;
-    const price = form.price.value;
-    const description = form.description.value;
-    const rating =form.rating.value;
-
-    const item = {name, image, brandName, type, price, description, rating};
+const UpdateItems = () => {
+    const item = useLoaderData();
+    const {_id, name, image, brandName,type, price, description, rating} = item;
     console.log(item);
-    fetch('http://localhost:5000/items', {
-      method:'POST',
-      headers:{
-        'content-type' : 'application/json',
-    },
-    body: JSON.stringify(item)
-     }
-    )
-    .then(res => res.json())
-    .then(data => {
-      console.log(data);
-      if(data.insertedId)
-      {
-        toast.success('user add Successfully');
-      }
-    })
-
-
-
-  }
+    const handelUpdate = e => {
+        e.preventDefault();
+        const form = e.target;
+        const name = form.name.value;
+        const image = form.image.value;
+        const brandName = form.brandName.value;
+        const type = form.type.value ;
+        const price = form.price.value;
+        const description = form.description.value;
+        const rating =form.rating.value;
     
-
-
+        const UpdateItem = {name, image, brandName, type, price, description, rating};
+        console.log(UpdateItem);
+        fetch(`http://localhost:5000/update/${_id}`, {
+            method: "PUT",
+            headers:{
+                'content-type' : 'application/json',
+            },
+            body: JSON.stringify(UpdateItem)
+        })
+        .then(res => res.json())
+        .then(data => {
+            console.log(data);
+            if(data.modifiedCount > 0)
+            {
+                toast.success('this product will be successfully update')
+            }
+        })
+    
+    
+    
+      }
     return (
         <div className="bg-[#F8F4EE] p-6 rounded-lg " >
-            <h1 className="text-5xl font-bold mt-20 mb-10 text-center">Add Product</h1>
-            <form onSubmit={handelAdd} className="space-y-8" >
+            <h1 className="text-5xl font-bold mt-20 mb-10 text-center">Update Product</h1>
+            <form onSubmit={handelUpdate} className="space-y-8" >
         {/* form name and Image */}
         <div className="md:flex">
         <div className="form-control md:w-1/2">
@@ -53,9 +52,10 @@ const AddProduct = () => {
            
             <input
             name="name"
+            defaultValue={name}
               type="text"
               placeholder="Name"
-            
+             
               className="input input-bordered w-full"
             />
           </label>
@@ -71,7 +71,7 @@ const AddProduct = () => {
             name="image"
               type="text"
               placeholder="Image"
-            
+            defaultValue={image}
               className="input input-bordered w-full "
             />
           </label>
@@ -90,7 +90,7 @@ const AddProduct = () => {
             name="brandName"
               type="text"
               placeholder="Brand Name"
-            
+            defaultValue={brandName}
               className="input input-bordered w-full"
             />
           </label>
@@ -106,7 +106,7 @@ const AddProduct = () => {
             name="type"
               type="text"
               placeholder="Type"
-           
+            defaultValue={type}
               className="input input-bordered w-full "
             />
           </label>
@@ -125,7 +125,7 @@ const AddProduct = () => {
             name="price"
               type="text"
               placeholder="Price"
-            
+             defaultValue={price}
               className="input input-bordered w-full"
             />
           </label>
@@ -141,7 +141,7 @@ const AddProduct = () => {
             name="description"
               type="text"
               placeholder="Short description"
-            
+           defaultValue={description}
               className="input input-bordered w-full "
             />
           </label>
@@ -160,7 +160,7 @@ const AddProduct = () => {
             name="rating"
               type="text"
               placeholder="Rating"
-            
+           defaultValue={rating}
               className="input input-bordered w-full"
             />
           </label>
@@ -173,7 +173,7 @@ const AddProduct = () => {
 
         
 
-       <input type="submit" value="Add Product" className="btn btn-block 
+       <input type="submit" value="Update" className="btn btn-block 
         bg-black hover:bg-black text-white" />
 
       </form>
@@ -182,4 +182,4 @@ const AddProduct = () => {
     );
 };
 
-export default AddProduct;
+export default UpdateItems;

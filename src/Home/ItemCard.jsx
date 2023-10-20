@@ -22,7 +22,8 @@ const ItemCard = ({item}) => {
     <p className="text-gray-500 my-4" >{description}</p>
     <div className="flex justify-between">
         <Link to={`/item/${_id}`} ><button className="btn btn-primary" >Details</button></Link>
-        <button className="btn btn-accent" >Update</button>
+        
+        <Link to={`/update/${_id}`} ><button className="btn btn-accent" >Update</button></Link>
     </div>
   </div>
 </div>
