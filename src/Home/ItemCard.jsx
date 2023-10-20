@@ -1,8 +1,9 @@
 import Rating from "react-rating";
+import { Link } from "react-router-dom";
 
 
 const ItemCard = ({item}) => {
-    const {name,image,brandName,type,price,description, rating} = item || {}
+    const {_id,name,image,brandName,type,price,description, rating} = item || {}
     return (
         <div className="card card-compact  bg-sky-100 shadow-xl">
   <figure><img className="h-72 w-full" src={image} alt="Shoes" /></figure>
@@ -20,7 +21,7 @@ const ItemCard = ({item}) => {
     </div>
     <p className="text-gray-500 my-4" >{description}</p>
     <div className="flex justify-between">
-        <button className="btn btn-primary" >Details</button>
+        <Link to={`/item/${_id}`} ><button className="btn btn-primary" >Details</button></Link>
         <button className="btn btn-accent" >Update</button>
     </div>
   </div>
