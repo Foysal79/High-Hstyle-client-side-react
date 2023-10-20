@@ -32,7 +32,7 @@ const SingleItem = () => {
       console.log(data);
       if(data.insertedId)
       {
-        toast.success('user add Successfully');
+        toast.success('Successfully Cart');
       }
     })
      }

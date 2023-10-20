@@ -1,8 +1,26 @@
+import toast from "react-hot-toast";
 import { Link } from "react-router-dom";
 
 
 const CartCardDetails = ({item}) => {
     const {_id,name,image,brandName,type,price,description, rating} = item || {}
+
+
+
+    const handelDelate = _id => {
+        fetch(`http://localhost:5000/cart/${_id}`, {
+            method:'DELETE',
+        })
+        .then(res =>res.json())
+        .then(data => {
+            if(data.deletedCount > 0)
+            {
+                toast.success('deleted successfully');
+            }
+        })
+        
+    }
+
     return (
         <div className="card card-compact  bg-sky-100 shadow-xl">
         <figure><img className="h-72 w-full" src={image} alt="Shoes" /></figure>
@@ -19,10 +37,10 @@ const CartCardDetails = ({item}) => {
           
           </div>
           <p className="text-gray-500 my-4" >{description}</p>
-          <div className="flex justify-between">
-              <Link to={`/item/${_id}`} ><button className="btn btn-primary" >Details</button></Link>
+          <div className="flex justify-center">
+              <button onClick={ () => handelDelate(_id)} className="btn btn-primary" >Delate</button>
               
-              <Link to={`/update/${_id}`} ><button className="btn btn-accent" >Update</button></Link>
+              
           </div>
         </div>
       </div>
