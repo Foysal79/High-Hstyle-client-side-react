@@ -10,10 +10,10 @@ const Navbar = () => {
     const navLink = <>
        <li><NavLink className="mr-4" to='/' >Home</NavLink></li>
        <li><NavLink className="mr-4" to='/shop' >Shop</NavLink></li>
-       {
-        user && <li><NavLink className="mr-4" to='/addProduct' >Add Product</NavLink></li>
+       
+        <li><NavLink className="mr-4" to='/addProduct' >Add Product</NavLink></li>
         
-       }
+       
        
        <li><NavLink className="mr-4" to='/blog' >Blog </NavLink></li>
        <li><NavLink className="mr-4" to='/contact' >Contact</NavLink></li>
