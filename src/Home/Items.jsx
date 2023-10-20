@@ -1,6 +1,7 @@
 import { useLoaderData } from "react-router-dom";
 import ItemCard from "./ItemCard";
 import { useState } from "react";
+import SliderCarousel from "./SaleSlider";
 
 
 
@@ -13,8 +14,8 @@ const Items = () => {
     
     return (
         <div className="mt-10 mb-20 min-h-screen space-y-6 " >
-            <h1 className="text-center" >number of items : {items.length}</h1>
-             
+            
+             <SliderCarousel></SliderCarousel>
              {
                 data.length ? '' : <div className="flex justify-center" >
                     <img src="https://i.ibb.co/3MWZ0Y6/fpdl-in-red-grunge-style-coming-soon-design-1017-26691-large.jpg" alt="" />
