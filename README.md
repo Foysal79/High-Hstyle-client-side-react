@@ -1,8 +1,9 @@
-# React + Vite
+# HIGHstyle
+# 
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- the website is based on Fashion and Apparel
+- all products from world-class luxury brand can be purchased using this website.
+- using the website you can add products according to the category according to your choice and update
+- Most of the website features can be accessed by just login
+- Fashion related trending clothes shoes watches can be bought through this website

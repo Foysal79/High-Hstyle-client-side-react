@@ -12,6 +12,7 @@
   "dependencies": {
     "@coreui/react": "^5.0.0-alpha.3",
     "@fullpage/react-fullpage": "^0.1.40",
+    "aos": "^3.0.0-beta.6",
     "bootstrap": "^5.3.2",
     "firebase": "^10.5.0",
     "localforage": "^1.10.0",

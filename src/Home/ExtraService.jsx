@@ -1,7 +1,14 @@
-
+import Aos from "aos";
+import { useEffect } from "react";
+import 'aos/dist/aos.css';
 const ExtraService = () => {
+    useEffect(() => {
+        Aos.init({
+          duration: 1000, // Set the animation duration in milliseconds
+        });
+      }, []);
     return (
-        <div className="w-11/12 mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 bg-gray-100 p-8 rounded-xl my-10 space-y-4" >
+        <div data-aos="fade-up" className="w-11/12 mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 bg-gray-100 p-8 rounded-xl my-10 space-y-4" >
             <div className="flex justify-center items-center gap-2  ">
                 <div>
                     <img src="https://i.ibb.co/HtfYVxx/service-icon-1.png" alt="" />

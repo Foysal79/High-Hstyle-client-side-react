@@ -12,6 +12,7 @@ import Shop from "../Home/Shop";
 import Items from "../Home/Items";
 import SingleItem from "../Home/SingelItem";
 import UpdateItems from "../Home/UpdateItems";
+import Blog from "../Home/Blog";
 
 const router = createBrowserRouter([
     {
@@ -23,6 +24,10 @@ const router = createBrowserRouter([
             path: '/',
             element: <Home></Home>,
             loader: () => fetch('/data.json')
+        },
+        {
+          path: '/blog',
+          element: <Blog></Blog>
         },
         {
             path: '/addProduct',
@@ -48,7 +53,7 @@ const router = createBrowserRouter([
         },
         {
             path: '/items/:name',
-            element: <PrivetRouter><Items></Items></PrivetRouter>,
+            element: <Items></Items>,
             loader: ({params}) => fetch(`http://localhost:5000/items/${params.name}`),
         },
         {
