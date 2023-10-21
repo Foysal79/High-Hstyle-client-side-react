@@ -19,7 +19,7 @@ const SingleItem = () => {
    console.log(items);
      const handelCart = e => {
         e.preventDefault();
-        fetch('http://localhost:5000/cart', {
+        fetch('https://highstyle-4qobnujhn-foysals-projects-cce7b400.vercel.app/cart', {
       method:'POST',
       headers:{
         'content-type' : 'application/json',

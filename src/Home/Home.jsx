@@ -5,7 +5,7 @@ import NewCollection from "./NewCollection";
 import BestSelling from "./BestSelling";
 import ExtraService from "./ExtraService";
 import Faqs from "./Faqs";
-import { useEffect } from "react";
+import React, { useEffect } from "react";
 import Aos from "aos";
 import 'aos/dist/aos.css';
 
@@ -17,7 +17,7 @@ import 'aos/dist/aos.css';
 
 
 const Home = () => {
-    
+  
     const cards = useLoaderData();
 
     useEffect(() => {

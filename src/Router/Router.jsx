@@ -8,7 +8,7 @@ import SignUp from "../LoginLogOut/SignUp";
 import Login from "../LoginLogOut/Login";
 import PrivetRouter from "./PrivetRouter";
 import Cart from "../PrivetRouter/Cart";
-import Shop from "../Home/Shop";
+
 import Items from "../Home/Items";
 import SingleItem from "../Home/SingelItem";
 import UpdateItems from "../Home/UpdateItems";
@@ -36,7 +36,7 @@ const router = createBrowserRouter([
         {
             path: '/cart',
             element: <PrivetRouter><Cart></Cart></PrivetRouter>,
-            loader: () => fetch('http://localhost:5000/cart'),
+            loader: () => fetch('https://highstyle-4qobnujhn-foysals-projects-cce7b400.vercel.app/cart'),
 
         },
         {
@@ -47,25 +47,22 @@ const router = createBrowserRouter([
             path: '/login',
             element: <Login></Login>
         },
-        {
-            path: '/shop',
-            element: <Shop></Shop>
-        },
+        
         {
             path: '/items/:name',
             element: <Items></Items>,
-            loader: ({params}) => fetch(`http://localhost:5000/items/${params.name}`),
+            loader: ({params}) => fetch(`https://highstyle-4qobnujhn-foysals-projects-cce7b400.vercel.app/items/${params.name}`),
         },
         {
             path: '/item/:id',
             element: <PrivetRouter><SingleItem></SingleItem></PrivetRouter>,
-            loader: ({params}) => fetch(`http://localhost:5000/item/${params.id}`)
+            loader: ({params}) => fetch(`https://highstyle-4qobnujhn-foysals-projects-cce7b400.vercel.app/item/${params.id}`)
             
         },
         {
             path: '/update/:id',
             element : <PrivetRouter> <UpdateItems></UpdateItems> </PrivetRouter>,
-            loader: ({params}) => fetch(`http://localhost:5000/update/${params.id}`)
+            loader: ({params}) => fetch(`https://highstyle-4qobnujhn-foysals-projects-cce7b400.vercel.app/update/${params.id}`)
         }
       ]
     },

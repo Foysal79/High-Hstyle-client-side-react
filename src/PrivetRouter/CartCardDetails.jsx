@@ -8,7 +8,7 @@ const CartCardDetails = ({item}) => {
 
 
     const handelDelate = _id => {
-        fetch(`http://localhost:5000/cart/${_id}`, {
+        fetch(`https://highstyle-4qobnujhn-foysals-projects-cce7b400.vercel.app/cart/${_id}`, {
             method:'DELETE',
         })
         .then(res =>res.json())

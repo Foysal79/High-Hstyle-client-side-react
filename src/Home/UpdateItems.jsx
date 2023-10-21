@@ -19,7 +19,7 @@ const UpdateItems = () => {
     
         const UpdateItem = {name, image, brandName, type, price, description, rating};
         console.log(UpdateItem);
-        fetch(`http://localhost:5000/update/${_id}`, {
+        fetch(`https://highstyle-4qobnujhn-foysals-projects-cce7b400.vercel.app/update/${_id}`, {
             method: "PUT",
             headers:{
                 'content-type' : 'application/json',
