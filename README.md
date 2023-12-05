@@ -1,5 +1,5 @@
 # HIGHstyle
-# https://high-style-6bce1.web.app
+# https://leafy-lokum-545b2b.netlify.app
 
 
 - the website is based on Fashion and Apparel
